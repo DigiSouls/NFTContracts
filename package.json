@@ -1,0 +1,39 @@
+{
+	"name": "erc1155",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile": "npx hardhat clean; npx hardhat compile",
+		"accounts": "npx hardhat accounts",
+		"balance": "npx hardhat balance",
+		"generate": "npx hardhat generate",
+		"test": "REPORT_GAS=true npx hardhat test --network ganache",
+		"deploy:ganache": "NETWORK=ganache npx hardhat run --network ganache scripts/deploy.js",
+		"deploy:rinkeby": "NETWORK=rinkeby npx hardhat run --network rinkeby scripts/deploy.js",
+		"deploy:mainnet": "NETWORK=mainnet npx hardhat run --network rinkeby scripts/deploy.js",
+		"verify:rinkeby": "npx hardhat verify --network rinkeby 0x7A60836a2CD856679A219f407A05556d94D355B1 \"0x7dca125b1e805dc88814aed7ccc810f677d3e1db\"",
+		"verify:mainnet": "npx hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS \"0xa5409ec958c83c3f309868babaca7c86dcb077c1\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@openzeppelin/contracts": "^4.0.0",
+		"@truffle/hdwallet-provider": "1.2.5",
+		"dotenv": "^8.2.0"
+	},
+	"devDependencies": {
+		"@nomiclabs/hardhat-ethers": "^2.0.2",
+		"@nomiclabs/hardhat-etherscan": "^2.1.1",
+		"@nomiclabs/hardhat-waffle": "^2.0.1",
+		"@nomiclabs/hardhat-web3": "^2.0.0",
+		"@openzeppelin/test-helpers": "^0.5.10",
+		"chai": "^4.3.4",
+		"dotenv": "^8.2.0",
+		"ethereum-waffle": "^3.3.0",
+		"ethers": "^5.0.32",
+		"hardhat": "^2.1.2",
+		"hardhat-gas-reporter": "^1.0.4",
+		"web3": "^1.3.4"
+	}
+}
